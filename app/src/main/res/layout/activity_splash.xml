@@ -12,4 +12,12 @@
         android:id="@+id/splashLogo"
         android:alpha="0"/>
 
+    <com.twitter.sdk.android.core.identity.TwitterLoginButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splashLogo"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/twitterLoginButton"
+        android:alpha="0"/>
+
 </RelativeLayout>

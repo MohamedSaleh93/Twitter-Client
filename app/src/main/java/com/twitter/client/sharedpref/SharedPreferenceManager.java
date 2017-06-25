@@ -14,12 +14,11 @@ import com.twitter.client.Program;
 public class SharedPreferenceManager {
 
     private static SharedPreferenceManager sharedPreferenceManager;
-    private static final String MY_PREF = "FamTreePreference";
+    private static final String MY_PREF = "TwitterPref";
     private SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     private SharedPreferenceManager() {
-        sharedPreferences = Program.getContext().getSharedPreferences(MY_PREF,
-                Context.MODE_PRIVATE);
+        sharedPreferences = Program.getContext().getSharedPreferences(MY_PREF, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
 
@@ -55,6 +54,15 @@ public class SharedPreferenceManager {
 
     public boolean getBoolean(String key, boolean defaultValue) {
         return sharedPreferences.getBoolean(key, defaultValue);
+    }
+
+    public void putLong(String key, long value) {
+        editor.putLong(key, value);
+        editor.commit();
+    }
+
+    public long getLong(String key, long defaultValue) {
+        return sharedPreferences.getLong(key, defaultValue);
     }
 
     public void cleanData() {
