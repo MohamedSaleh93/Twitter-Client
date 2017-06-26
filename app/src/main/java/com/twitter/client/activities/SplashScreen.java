@@ -5,15 +5,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.twitter.client.R;
-import com.twitter.client.Utils.Statics;
+import com.twitter.client.utilities.Statics;
 import com.twitter.client.sharedpref.SharedPreferenceManager;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterAuthToken;
 import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
@@ -38,9 +38,14 @@ public class SplashScreen extends Activity {
         twitterLoginButton.setCallback(new Callback<TwitterSession>() {
             @Override
             public void success(Result<TwitterSession> result) {
+                TwitterAuthConfig authConfig = TwitterCore.getInstance().getAuthConfig();
+                TwitterAuthToken authToken = result.data.getAuthToken();
+                sharedPreferenceManager.putString(Statics.AUTH_TOKEN_KEY, authToken.token);
+                sharedPreferenceManager.putString(Statics.AUTH_SECRET_KEY, authToken.secret);
                 sharedPreferenceManager.putString(Statics.USER_NAME_KEY, result.data.getUserName());
                 sharedPreferenceManager.putLong(Statics.USER_ID_KEY, result.data.getUserId());
                 sharedPreferenceManager.putBoolean(Statics.USER_LOGGED_IN_KEY, true);
+
                 Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(intent);
                 finish();

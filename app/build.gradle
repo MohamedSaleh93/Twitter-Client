@@ -23,6 +23,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.twitter.sdk.android:twitter:3.0.0'
+    compile 'org.twitter4j:twitter4j-core:4.0.6'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
