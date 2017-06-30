@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <ImageView
+        android:id="@+id/followerBG"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/followerProfileImage"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp" />
+
+    <TextView
+        android:id="@+id/followerUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/followerProfileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
+
+    <ListView
+        android:id="@+id/tweetsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/followerUserName"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

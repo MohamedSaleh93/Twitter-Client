@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.twitter.client">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/twitter_logo"
@@ -17,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.FollowerInfoActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
