@@ -53,9 +53,7 @@ public class SplashScreen extends Activity {
 
             @Override
             public void failure(TwitterException exception) {
-                // TODO remove exception from toast message
-                Toast.makeText(SplashScreen.this, "Login failed with exception : " +
-                exception.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(SplashScreen.this, getString(R.string.login_failed) , Toast.LENGTH_LONG).show();
             }
         });
         findViewById(R.id.splashLogo).animate().alpha(1f).setDuration(ALPHA_ANIMATION_DURATION)

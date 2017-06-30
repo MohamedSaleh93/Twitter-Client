@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.twitter.client.R;
 import com.twitter.sdk.android.core.Callback;
@@ -24,7 +25,7 @@ import twitter4j.Status;
  * @author MohamedSaleh on 6/30/2017.
  */
 
-public class TweetsAdapter extends BaseAdapter{
+public class TweetsAdapter extends BaseAdapter {
 
     private Context mContext;
     private ResponseList<Status> statusList;
@@ -66,10 +67,9 @@ public class TweetsAdapter extends BaseAdapter{
 
             @Override
             public void failure(TwitterException exception) {
-
+                Toast.makeText(mContext, mContext.getString(R.string.failed_loading_tweet), Toast.LENGTH_LONG).show();
             }
         });
-
         return vi;
     }
 }

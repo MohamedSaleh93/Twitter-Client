@@ -3,12 +3,14 @@ package com.twitter.client.activities;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.twitter.client.R;
 import com.twitter.client.adapters.FollowersAdapter;
@@ -106,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
                 if (swipeRefreshLayout.isRefreshing()) {
                     swipeRefreshLayout.setRefreshing(false);
                 }
+            } else {
+                Toast.makeText(MainActivity.this, getString(R.string.failed_loading_followers), Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -124,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Nullable
     private PagableResponseList<User> readFollowersFromCache() {
         try {
             FileInputStream fis = openFileInput(Statics.FOLLOWER_KEY);

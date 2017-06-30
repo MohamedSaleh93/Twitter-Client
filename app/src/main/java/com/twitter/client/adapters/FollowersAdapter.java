@@ -30,16 +30,14 @@ public class FollowersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private Activity mActivity;
     private List<User> mFollowersList;
 
-    public FollowersAdapter(List<User> followersList,
-                            Activity activity) {
+    public FollowersAdapter(List<User> followersList, Activity activity) {
         mActivity = activity;
         mFollowersList = followersList;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mActivity).inflate(R.layout.followers_list_item, parent,
-                false);
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.followers_list_item, parent, false);
         return new FollowersViewHolder(view);
     }
 
@@ -69,10 +67,11 @@ public class FollowersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     private class FollowersViewHolder extends RecyclerView.ViewHolder {
-        public CircleImageView followerImage;
+
+        private CircleImageView followerImage;
         private TextView followerName, followerHandle, followerBio;
 
-        public FollowersViewHolder(View itemView) {
+        private FollowersViewHolder(View itemView) {
             super(itemView);
             followerImage = (CircleImageView) itemView.findViewById(R.id.followerImage);
             followerName = (TextView) itemView.findViewById(R.id.followerName);

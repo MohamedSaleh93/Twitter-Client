@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">TwittyFollowers</string>
     <string name="please_wait">&#8230; استنى شوية معلش </string>
+    <string name="login_failed">فيه مشكلة حصلت</string>
+    <string name="failed_loading_followers">مشكلة فى تحميل المتابعيين</string>
+    <string name="failed_loading_tweet">مشكلة فى عرض التغريدة</string>
 </resources>

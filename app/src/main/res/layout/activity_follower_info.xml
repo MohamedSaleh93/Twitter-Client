@@ -11,8 +11,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/followerProfileImage"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp" />
 
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:textColor="@android:color/white"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/tweetsList"

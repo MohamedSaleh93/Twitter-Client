@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TwittyFollowers</string>
     <string name="please_wait">Please wait &#8230;</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="failed_loading_followers">Failed loading followers</string>
+    <string name="failed_loading_tweet">Failed loading tweet</string>
 </resources>
